@@ -1,0 +1,84 @@
+.header {
+  display: block;
+  width: 100%;
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #e4e2f1;
+  border-bottom: 1px solid #b6abe2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e4e2f1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+nav li {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  margin: 0 1em;
+}
+
+nav li.right {
+  float: right;
+}
+
+nav li.appname {
+  font-size: 19px;
+  font-weight: 600;
+  color: deeppink;
+}
+
+nav li.menuitems {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.number {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  display: contents;
+  color: #114221;
+}
+
+button {
+  height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #7dc78936;
+}
+
+input {
+  width: 55px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
+
+#snackbar {
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #FF9800;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+}

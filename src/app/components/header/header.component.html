@@ -1,0 +1,35 @@
+<div class="header">
+  <div *ngIf='totalNumbers < minimumTotal || totalNumbers > maximumTotal' id='snackbar'> Total can not be less than {{ minimumTotal }} or more than {{ maximumTotal }}</div>
+  <nav class="navbar">
+    <ul>
+      <li class='appname'>Random Number Generator</li>
+      <li class='right menuitems'>
+        <button (click)='downloadFile()'>Download</button>
+      </li>
+      <li class='right menuitems'>
+        <button *ngIf='totalNumbers >= minimumTotal && totalNumbers <= maximumTotal' (click)='createNumbers()'> Generate Numbers</button>
+        <button *ngIf='totalNumbers < minimumTotal || totalNumbers > maximumTotal || !totalNumbers' (click)='createNumbers()' disabled> Generate Numbers</button>
+      </li>
+      <li class='right menuitems'>
+        <label>Sort:
+          <select name='sort'>
+            <option value="ascending" name='option' (click)="orderNumbers('ascending')">Ascending</option>
+            <option value="descending" name='option'  (onselect)="orderNumbers('descending')">Descending</option>
+          </select>
+        </label>
+      </li>
+      <li class="right menuitems">
+        <label>Total:
+          <input type='number' name='totalNumbers' [(ngModel)]='totalNumbers' placeholder="10000">
+        </label>
+      </li>
+      <li class='right menuitems'>
+        <span>Maximum: &nbsp;</span>
+        <span class='number'>{{ maximumNumber }}</span></li>
+      <li class="right menuitems">
+        <span>Minimum:&nbsp;</span>
+        <span class='number'>{{ minimumNumber }}</span>
+      </li>
+    </ul>
+  </nav>
+</div>

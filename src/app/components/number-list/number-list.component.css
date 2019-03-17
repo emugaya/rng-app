@@ -1,0 +1,16 @@
+.number-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 10px;
+  margin-top: 3.125em;
+}
+
+.number-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  color: #422152;
+}
