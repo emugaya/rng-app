@@ -23,14 +23,14 @@ npm install
 ng serve
 ```
 
-## Screenshots of working application
-![](images/app-screenshot.png)
+## Screenshots of the App
+![](https://github.com/emugaya/rng-app/blob/master/src/images/app-screenshot.PNG)
 
 ## Sample File Downloaded
 ```
 Total Numbers generated:  10
 Minimum Number: 0110803500
-Minimum Number: 0832819667
+Maximum Number: 0832819667
 Saved on: 20:50:28 GMT+0300 (East Africa Time)
 Numbers Generated:
 ================================================

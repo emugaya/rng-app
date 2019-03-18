@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
     let textFileData = '';
     textFileData += `Total Numbers generated:  ${this.numbers.length}\r\n`;
     textFileData += `Minimum Number: ${this.minimumNumber}\r\n`;
-    textFileData += `Minimum Number: ${this.maximumNumber}\r\n`;
+    textFileData += `Maximum Number: ${this.maximumNumber}\r\n`;
     textFileData += `Saved on: ${new Date(Date.now()).toTimeString()}\r\n`;
     textFileData += 'Numbers Generated:\r\n';
     textFileData += '================================================\r\n';
