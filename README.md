@@ -24,7 +24,7 @@ ng serve
 ```
 
 ## Screenshots of working application
-
+![](images/app-screenshot.png)
 
 ## Sample File Downloaded
 ```
