@@ -3,7 +3,7 @@
 # Rando Number Generation App
 The Random Number Generator Application is an Angular App used to generate 10 digit random telephone numbers starting with `0`.
 
-The application allows a user generate a minimum of `1` number and a maximum of `10,000` numbers. The user is able to dowload the numbers generated. The generated file has a summary as listed below.
+The application allows a user generate a minimum of `1` number and a maximum of `10,000` numbers. The user is able to download the numbers generated. The user is also able to see the maximum and minimum numbers of the list generated.
 
 ## Requirements
 - [`Nodejs 8.9.4`](https://nodejs.org) and above
@@ -26,7 +26,7 @@ ng serve
 ## Screenshots of working application
 
 
-##H Sample File Downloaded
+## Sample File Downloaded
 ```
 Total Numbers generated:  10
 Minimum Number: 0110803500
