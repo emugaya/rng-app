@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FileSaverService } from 'ngx-filesaver';
+
 import { NumberService } from './_services/number.service';
 
 @Component({
@@ -17,7 +19,9 @@ export class AppComponent implements OnInit {
   sortOrder = 'ascending';
   downloadSucceded: boolean;
 
-  constructor(private numberService: NumberService) {}
+  constructor(
+    private numberService: NumberService,
+    private fileSaverService: FileSaverService) {}
 
   generateNumbers(total: number = 10) {
     this.numberService.generateRandomNumbers(total)
@@ -48,9 +52,19 @@ export class AppComponent implements OnInit {
   }
 
   downloadNumbers() {
-    this.downloadSucceded = false;
-    console.log('download numbers clicked');
-    this.downloadSucceded = true;
+    let textFileData = '';
+    textFileData += `Total Numbers generated:  ${this.numbers.length}\r\n`;
+    textFileData += `Minimum Number: ${this.minimumNumber}\r\n`;
+    textFileData += `Minimum Number: ${this.maximumNumber}\r\n`;
+    textFileData += `Saved on: ${new Date(Date.now()).toTimeString()}\r\n`;
+    textFileData += 'Numbers Generated:\r\n';
+    textFileData += '================================================\r\n';
+    for (const num of  this.numbers) {
+      textFileData += `${num}\r\n`;
+    }
+
+    const textFileblob = new Blob([textFileData], {type: 'text/plain;charset=utf-8'});
+    return this.fileSaverService.save(textFileblob, 'numbers.txt');
   }
 
   ngOnInit() {

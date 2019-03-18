@@ -1,6 +1,8 @@
 import { TestBed, async, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NumberListComponent } from './components/number-list/number-list.component';
@@ -55,10 +57,17 @@ describe('AppComponent', () => {
     expect(app.numbers[0]).toBeGreaterThan(app.numbers[app.numbers.length - 1], 'numbers sorted in ascending order');
   });
 
-  it('should download numbers succesfull', () => {
+  it('should download text file succesfully', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    app.downloadNumbers();
-    expect(app.downloadSucceded).toBeTruthy();
+
+    const downLoadDe = fixture.debugElement.query(By.css('#download'));
+    const downLoadEl = downLoadDe.nativeElement;
+    downLoadEl.click();
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(app.downloadNumbers).toHaveBeenCalled();
+    });
   });
 });

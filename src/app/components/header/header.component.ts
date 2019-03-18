@@ -21,7 +21,9 @@ export class HeaderComponent {
   constructor() { }
 
   createNumbers() {
-    this.generateNewNumbers.emit(this.totalNumbers);
+    if (this.totalNumbers >= this.minimumTotal && this.totalNumbers <= this.maximumTotal) {
+      this.generateNewNumbers.emit(this.totalNumbers);
+    }
   }
 
   orderNumbers(sortOrder) {

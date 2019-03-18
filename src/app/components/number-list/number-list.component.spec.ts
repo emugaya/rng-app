@@ -24,7 +24,7 @@ describe('NumberListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create number-list component', () => {
     expect(component).toBeTruthy();
   });
 
