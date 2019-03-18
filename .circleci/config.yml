@@ -48,10 +48,13 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            ng test --code-coverage
-            ls -l ./coverage
+            ng test --code-coverage --reporter=coverage-istanbul
+            cd coverage
+            ls -l
+            cd number-app
+            ls -l
             ./cc-test-reporter after-build --debug -t lcov --exit-code $?
       - store_artifacts: # upload test coverage as artifact
-          path: ./coverage/lcov.info
+          path: ./coverage/number-app/lcov.info
           prefix: tests
 
